@@ -7,7 +7,7 @@ import sys
 
 # Loading the image
 def loadImage():
-    maxdim = 300
+    maxdim = 100
     img = Image.open(sys.argv[1])
     img.load()
     w = img.size[0]
@@ -19,7 +19,6 @@ def loadImage():
         scale = (maxdim/h)
     w = int(w*scale)
     h = int(h*scale)
-    print(w,h)
     img = img.resize((w, h), Image.ANTIALIAS)
     img = np.array(img)
     return img
